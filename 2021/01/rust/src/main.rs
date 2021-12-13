@@ -1,20 +1,11 @@
-use std::fs;
+mod input;
+mod part1;
+mod part2;
 
 fn main() {
-    let input_string = fs::read_to_string("./src/input.txt").expect("Something went wrong!");
-    let depths: Vec<i32> = input_string
-        .split("\n")
-        .map(|depth_string| depth_string.parse::<i32>().unwrap())
-        .collect();
-    let mut increases = 0;
-    let mut prev: Option<i32> = None;
-    for depth in depths {
-        if prev.is_some() {
-            if prev.unwrap() < depth {
-                increases += 1;
-            }
-        }
-        prev = Some(depth);
-    }
-    println!("Answer: {}", increases);
+    let input = input::read_input();
+    let answer_1 = part1::run(&input);
+    println!("Answer part 1: {}", answer_1);
+    let answer_2 = part2::run(&input);
+    println!("Answer part 2: {}", answer_2);
 }
