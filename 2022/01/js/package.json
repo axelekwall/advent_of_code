@@ -1,0 +1,7 @@
+{
+  "name": "aoc_2022_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "part01.js",
+  "type": "module"
+}
